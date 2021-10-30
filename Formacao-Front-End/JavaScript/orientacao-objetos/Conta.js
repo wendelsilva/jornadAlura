@@ -1,8 +1,13 @@
+//classe abstrata
 export class Conta{
     constructor(saldoInicial, cliente, agencia) {
         this._saldo = saldoInicial;
         this._cliente = cliente;
         this._agencia = agencia;
+
+        if(this.constructor === Conta) {
+            throw new Error('Conta não pode ser instanciada diretamente');
+        }
     }
 
     set cliente(novoValor) {
